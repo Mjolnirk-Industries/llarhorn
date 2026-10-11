@@ -1,0 +1,42 @@
+{
+  "name": "llarhorn",
+  "version": "0.1.0",
+  "description": "Pi extension that balances multiple named OpenCode Go API keys, auto-rotating on rate limits and showing the active account in a persistent status indicator.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "pi-extension",
+    "pi-package",
+    "opencode",
+    "opencode-go",
+    "api-key-rotation",
+    "rate-limit"
+  ],
+  "license": "MIT",
+  "author": "Mjolnirk-Industries",
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=1.1.0"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^1.1.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.0"
+  }
+}
